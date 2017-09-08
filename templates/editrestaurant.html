@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit this Restaurant</title>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+<div class="container">
+    <h1>Edit this Restaurant</h1>
+    <nav><a class="nav-title" href="{{ url_for('allRestaurants') }}">Index</a></nav>
+    <h2 class="current-info">Type the new name of {{ restaurant.name }}:</h2>
+    <form method="post" action="{{ url_for('editRestaurant', restaurant_id = restaurant.id) }}">
+        <input class="textline" type="text" name="name" value="{{ restaurant.name }}" placeholder="{{ restaurant.name }}">
+        <div class="btn-group">
+            <input class="btn first" type="submit" value="Submit">
+            <a class="btn" href="{{ url_for('allRestaurants') }}">Cancel</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

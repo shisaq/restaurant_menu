@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+<div class="container">
+    <h1>Menu of {{ restaurant.name }}</h1>
+    <nav><a class="nav-title" href="{{ url_for('allRestaurants') }}">Index</a></nav>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <p class="messages">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="addnew">
+        <a href="{{ url_for('addMenuItem', restaurant_id = restaurant.id) }}">Add a New Menu Item</a>
+    </div>
+    <ul class="thelist">
+        {% for item in items %}
+        <li class="menu-item">
+            <h4>{{ item.name }}</h4>
+            <p class="price">{{ item.price }}</p>
+            <p>{{ item.description }}</p>
+            <a class="btn first" href="{{ url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = item.id) }}">Edit</a>
+            <a class="btn" href="{{ url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = item.id) }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
