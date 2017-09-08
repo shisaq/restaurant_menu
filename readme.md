@@ -21,7 +21,7 @@ venv, vagrant, etc.
 
 ![develop process](https://i.loli.net/2017/09/08/59b29cf4b390a.png)
 
-1. Mock-ups(stucture & sketch)
+### Mock-ups(stucture & sketch)
 
  * structure
 
@@ -49,7 +49,7 @@ venv, vagrant, etc.
 
   ![delete](https://i.loli.net/2017/09/08/59b29e271a487.png)
 
-2. Routing
+### Routing
 
 For instance:
 
@@ -60,20 +60,20 @@ def allRestaurants():
     return 'Successfully opening index page!'
 ```
 
-3. Templates & Forms
+### Templates & Forms
 
  * html & form
  * build fake data in backend based on data structure
 
-4. CRUD Functionality
+### CRUD Functionality
 
 Establish database.
 
-5. API Endpoints
+### API Endpoints
 
 Return json data to let other developers play with it.
 
-6. Styling & Message Flashing
+### Styling & Message Flashing
 
  * CSS
  * flash messages to better interact with users
